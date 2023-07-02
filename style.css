@@ -1,0 +1,17 @@
+/*
+  Theme Name: AAJA Voices 2023 theme
+  Theme URI: https://github.com/wwsalmon/voices2023
+  Author: Samson Zhang
+  Author URI: https://www.samsonzhang.com/
+  Description: Custom template for voices.aaja.org, developed by Samson Zhang in summer 2023
+  Version: 0.1
+*/
+
+body {
+    font-family: "Libre Franklin", sans-serif;
+    color: "#343534";
+}
+
+.font-ss {
+    font-family: "Source Serif 4", serif;
+}

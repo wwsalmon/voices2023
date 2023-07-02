@@ -1,0 +1,18 @@
+{
+    "preflight":true,
+    "theme": {
+        "extend": {
+            "colors": {
+                "tblue": "#38557D",
+                "tlightblue": "#A5BFD3",
+                "tyellow": "#F4D596",
+                "tlightyellow": "#EDC065",
+                "tpurple": "#43233D",
+                "tlightpurple": "#B39EAA",
+                "tred": "#AC3437",
+                "tgray": "#343534",
+                "tlightgray": "#9F9F9E"
+            }
+        }
+    }
+ }
