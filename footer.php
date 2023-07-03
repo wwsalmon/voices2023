@@ -1,8 +1,8 @@
     <div class="w-full h-[10px] bg-tred"></div>
     <div class="w-full py-12 bg-tgray text-white">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex -mx-8">
-                <div class="w-1/3 px-8 flex-shrink-0">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="lg:flex lg:-mx-8">
+                <div class="lg:w-1/3 px-8 flex-shrink-0 mb-8">
                     <p class="text-3xl font-black mb-3">Apply</p>
                     <p class="text-2xl font-ss text-tlightyellow italic mb-8">Become a fellow or editor</p>
                     <p class="font-ss text-xl mb-8 leading-relaxed">
@@ -12,7 +12,7 @@
                         Apply now
                     </a>
                 </div>
-                <div class="w-1/3 px-8 flex-shrink-0">
+                <div class="lg:w-1/3 px-8 flex-shrink-0 mb-8">
                     <p class="text-3xl font-black mb-3">Donate</p>
                     <p class="text-2xl font-ss text-tlightpurple italic mb-8">Support our impact</p>
                     <p class="font-ss text-xl mb-8 leading-relaxed">
@@ -22,7 +22,7 @@
                         Support Voices
                     </a>
                 </div>
-                <div class="w-1/3 px-8 flex-shrink-0">
+                <div class="lg:w-1/3 px-8 flex-shrink-0 mb-8">
                     <p class="text-3xl font-black mb-3">Partner</p>
                     <p class="text-2xl font-ss text-tlightblue italic mb-8">Work with us as a brand</p>
                     <p class="font-ss text-xl mb-8 leading-relaxed">
@@ -33,24 +33,24 @@
         </div>
     </div>
     <div class="w-full py-8 bg-[#eeeeee]">
-        <div class="flex items-center max-w-5xl mx-auto">
-            <div class="w-1/3 flex-shrink-0">
+        <div class="md:flex items-center max-w-5xl mx-auto px-4">
+            <div class="md:w-1/3 flex-shrink-0 mb-8 md:mb-0">
                 <img src="<?php echo get_template_directory_uri() . '/img/aaja.jpg'; ?>" alt="AAJA logo" class="h-24 mix-blend-multiply">
             </div>
-            <div class="w-2/3 flex-shrink-0">
+            <div class="md:w-2/3 flex-shrink-0">
                 <p>The <b>Asian American Journalists Association</b> (AAJA) is a membership nonprofit advancing diversity in newsrooms and ensuring fair and accurate coverage of communities of color. AAJA has more than 1,500 members across the United States and Asia.</p>
             </div>
         </div>
     </div>
-    <div class="w-full h-16 bg-white">
-        <div class="flex h-full items-center max-w-5xl mx-auto">
-            <a href="https://aaja.org" class="font-bold">aaja.org</a>
-            <a href="" class="ml-auto">Voices home</a>
-            <a href="" class="ml-8">Student work</a>
-            <a href="" class="ml-8">People</a>
-            <a href="" class="ml-8">About</a>
-            <a href="" class="ml-8">Apply</a>
-            <a href="" class="ml-8">Donate</a>
+    <div class="w-full h-16 bg-white overflow-x-auto">
+        <div class="flex h-full items-center max-w-5xl mx-auto px-4">
+            <a href="https://aaja.org" class="font-bold mr-8">aaja.org</a>
+            <a href="" class="ml-auto flex-shrink-0">Voices home</a>
+            <a href="" class="ml-8 flex-shrink-0">Student work</a>
+            <a href="" class="ml-8 flex-shrink-0">People</a>
+            <a href="" class="ml-8 flex-shrink-0">About</a>
+            <a href="" class="ml-8 flex-shrink-0">Apply</a>
+            <a href="" class="ml-8 pr-4 flex-shrink-0">Donate</a>
         </div>
     </div>
 </body>

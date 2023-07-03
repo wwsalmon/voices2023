@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "scripts": {
+    "tw": "postcss ./src/tw.css -o ./css/tw.css -w"
+  } 
+}
