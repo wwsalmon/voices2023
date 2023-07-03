@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "footer.php", "header.php", "index.php"
+    "footer.php", "header.php", "index.php", "single.php"
   ],
   theme: {
     extend: {
@@ -14,7 +14,7 @@ module.exports = {
           "tlightpurple": "#B39EAA",
           "tred": "#AC3437",
           "tgray": "#343534",
-          "tlightgray": "#9F9F9E"
+          "tlightgray": "#9F9F9E",
       }
     },
   },

@@ -14,3 +14,23 @@ function script_enqueue()
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/fa.css', false, NULL, 'all' );
 }
 add_action('wp_enqueue_scripts', 'script_enqueue');
+
+function catch_that_image($post_id)
+{
+    $post = get_post($post_id);
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if (empty($first_img)) {
+        // see if it's just an issue with image not having quotes, not necessarily missing them entirely
+        $output = preg_match_all('<img.+src=([^\'"\s]+)[\'"\s].*>', $post->post_content, $matches);
+        $first_img = $matches[1][0];
+        if (empty($first_img)){
+            $first_img = false;
+        }
+    }
+    return $first_img;
+}
