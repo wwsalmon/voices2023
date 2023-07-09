@@ -9,6 +9,8 @@ development
 
 required setup (in WordPress)
 - Create page called "Home" and set as homepage in WordPress settings (Settings > Readings > Your homepage displays > A static page > Home)
+- Create page called "Apply" (linked in footer and has custom template)
+- Create page called "People" (linked in header and has custom template)
 - Install plugin co-authors plus
 
 posts

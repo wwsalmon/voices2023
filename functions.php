@@ -36,3 +36,40 @@ function catch_that_image($post_id)
 }
 
 add_theme_support( 'post-thumbnails' );
+
+function add_customizer_options($wp_customize) {
+    $wp_customize->add_section("home-cta", array("title" => "Homepage call to action"));
+    $wp_customize->add_setting("home-cta-image");
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, "home-cta-image-control",array(
+        "label"=>"Home CTA thumbnail",
+        "section"=>"home-cta",
+        "settings"=>"home-cta-image",
+        "width"=>1000,
+        "height"=>1000,
+        "flex-width"=>false,
+        "flex-height"=>false,
+    )));
+    $wp_customize->add_setting("home-cta-text");
+    $wp_customize->add_control("home-cta-text-control", array(
+        "label"=>"Home CTA text",
+        "section"=>"home-cta",
+        "settings"=>"home-cta-text",
+        "type"=>"string",
+    ));
+    $wp_customize->add_setting("home-cta-button-text");
+    $wp_customize->add_control("home-cta-button-text-control", array(
+        "label"=>"Home CTA button text",
+        "section"=>"home-cta",
+        "settings"=>"home-cta-button-text",
+        "type"=>"string",
+    ));
+    $wp_customize->add_setting("home-cta-button-url");
+    $wp_customize->add_control("home-cta-button-url-control", array(
+        "label"=>"Home CTA button url",
+        "section"=>"home-cta",
+        "settings"=>"home-cta-button-url",
+        "type"=>"url",
+    ));
+}
+
+add_action("customize_register", "add_customizer_options");
