@@ -34,3 +34,5 @@ function catch_that_image($post_id)
     }
     return $first_img;
 }
+
+add_theme_support( 'post-thumbnails' );
