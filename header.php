@@ -23,7 +23,7 @@ wp_head();
                 <a href="" class="font-semibold mx-4">People</a>
                 <a href="" class="font-semibold mx-4">Donate</a>
             </div>
-            <a href="" class="absolute left-1/2 top-4 md:top-5 transform -translate-x-1/2">
+            <a href="<?php echo home_url() ?>" class="absolute left-1/2 top-4 md:top-5 transform -translate-x-1/2">
                 <img src="<?php echo get_template_directory_uri() . '/img/voices.png'; ?>" class="h-8 md:h-9" alt="">
             </a>
             <div class="sm:hidden mr-4 ml-auto flex items-center">

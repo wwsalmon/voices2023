@@ -26,18 +26,18 @@ body {
   }
 }
 
-.content p, li {
-  line-height: 1.6;
-  margin: 1.6em 0;
-  font-family: "Source Serif 4", serif;
-}
-
-.content > p:first-child:first-letter {
+.content-drop > p:first-child:first-letter {
   font-size: 3.15em;
   line-height: 1;
   font-weight: 700;
   margin-right: 4px;
   float: left;
+}
+
+.content p, li {
+  line-height: 1.6;
+  margin: 1.6em 0;
+  font-family: "Source Serif 4", serif;
 }
 
 .content li {
@@ -50,10 +50,18 @@ body {
   list-style: unset;
 }
 
-.content h2{
+.content h2 {
+  font-size: 2.8em;
+  font-weight: 300;
+  font-family: "Source Serif 4", serif;
+  margin-top: 1.5em;
+  line-height: 1.2;
+}
+
+.content h3 {
   font-size: 1.5em;
   font-weight: 700;
-  margin-top: 4em;
+  margin-top: 1.5em;
   line-height: 1.2;
 }
 

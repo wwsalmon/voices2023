@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="max-w-xl md:max-w-2xl mx-auto px-4 content">
+    <div class="max-w-xl md:max-w-2xl mx-auto px-4 content content-drop">
         <?php the_content(); ?>
     </div>
     <div class="max-w-4xl mx-auto px-4 my-28">
