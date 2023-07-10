@@ -20,7 +20,7 @@ $categories = get_categories();
         <div class="relative">
             <div class="lg:absolute lg:w-40 lg:-left-52 mb-24">
                 <?php if (is_category()): ?>
-                    <a href="<?php echo get_home_url("/stories")?>" class="px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white">
+                    <a href="<?php echo home_url("/stories")?>" class="px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white">
                         < Back to all
                     </a>
                 <?php else: ?>
