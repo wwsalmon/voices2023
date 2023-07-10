@@ -40,7 +40,7 @@
             <div class="lg:w-72 flex-shrink-0 lg:mr-20">
                 <p class="font-black text-[36px] text-tyellow mb-12 leading-tight">Add real, hard-hitting stories to your portfolio</p>
                 <p class="text-xl leading-normal mb-12">30 years of impactful investigations and previously untold stories speak for themselves</p>
-                <a href="" class="px-4 py-2 inline-flex items-center text-lg justify-center uppercase bg-tyellow font-semibold block mb-16 lg:mb-32 text-tgray">
+                <a href="<?php echo home_url("/stories")?>" class="px-4 py-2 inline-flex items-center text-lg justify-center uppercase bg-tyellow font-semibold block mb-16 lg:mb-32 text-tgray">
                     Read student work
                 </a>
                 <div class="hidden lg:block">
