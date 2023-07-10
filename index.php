@@ -2,7 +2,7 @@
 $prev_cat = "";
 $categories = get_categories();
 ?>
-    <div class="max-w-xl mx-auto py-24 px-4 relative">
+    <div class="max-w-xl mx-auto my-24 px-4 relative">
         <div class="lg:absolute lg:w-40 lg:-left-48 mb-24">
             <h1 class="lg:text-right text-5xl md:text-6xl lg:text-7xl font-black italic text-tred leading-none uppercase text-tyellow lg:-rotate-90 origin-top-left relative pointer-events-none" id="student-work">Student work</h1>
             <style>
@@ -38,8 +38,11 @@ $categories = get_categories();
                 <a href="<?php the_permalink()?>">
                     <?php echo get_the_post_thumbnail( null, array(1200,750) )?>
                 </a>
+                <?php
+                $tags = array_values(array_filter(get_the_tags(), function($t) {return $t->name != "Featured";}));
+                ?>
                 <p class="text-xs flex items-center uppercase font-black mt-8 tracking-widest">
-                    <span class="text-tred"><?php echo get_the_tags()[0]->name ?></span>
+                    <span class="text-tred"><?php echo $tags[0]->name ?></span>
                     <span class="text-tlightgray ml-2"><?php echo substr(get_the_category()[0]->name, -4) ?></span>
                 </p>
                 <a href="<?php the_permalink()?>">
@@ -52,6 +55,16 @@ $categories = get_categories();
         endwhile;
         ?>
         <?php the_posts_pagination()?>
+        <div class="hidden lg:block w-44 absolute top-[152.5px] -right-52">
+            <?php
+            $featured = get_posts(array("tag"=>"Featured"));
+            foreach($featured as $featuredpost): ?>
+                <a href="<?php the_permalink($featuredpost)?>" class="block mb-10 opacity-75 hover:opacity-100">
+                    <?php echo get_the_post_thumbnail($featuredpost, array(60, 60) ) ?>
+                    <h3 class="mt-4 font-ss"><?php echo get_the_title($featuredpost)?></h3>
+                </a>
+            <?php endforeach; ?>
+        </div>
     </div>
 <?php
 endif;
