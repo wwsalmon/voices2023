@@ -13,6 +13,9 @@ required setup (in WordPress)
 - Create page called "Apply"
 - Create page called "People"
 - Install plugin co-authors plus
+- Set permalink structure in Settings > Permalinks
+    - Permalink structure: put in custom `/stories/%category%/%postname%/`
+    - Optional > Category base: put `stories`
 
 posts
 - categories: "[city name] [year]", i.e. "Los Angeles 2022". only one category per post.
