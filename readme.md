@@ -16,6 +16,14 @@ required setup (in WordPress)
 - Set permalink structure in Settings > Permalinks
     - Permalink structure: put in custom `/stories/%category%/%postname%/`
     - Optional > Category base: put `stories`
+- Install plugin ACF
+    - Create field group "User fields" set to display on all User Forms
+    - Create field "photo", field type image, return image url
+    - Create field "bio", text
+    - Create field "twitter", text
+    - Create field "linkedin", text
+    - Create field "org", text
+    - Create field "program", taxonomy / category
 
 posts
 - categories: "[city name] [year]", i.e. "Los Angeles 2022". only one category per post.
