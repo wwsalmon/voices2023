@@ -109,3 +109,5 @@ function theme_get_categories() {
 
     return $choices;
 }
+
+add_filter('acf/settings/remove_wp_meta_box', '__return_false', 20); // override ACF removing custom fields. https://wordpress.org/support/topic/does-cpt-ui-disable-custom-fields/
