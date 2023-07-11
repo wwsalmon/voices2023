@@ -70,6 +70,15 @@ function add_customizer_options($wp_customize) {
         "settings"=>"home-cta-button-url",
         "type"=>"url",
     ));
+    $wp_customize->add_section("people", array("title"=>"People page"));
+    $wp_customize->add_setting("people-default-cat");
+    $wp_customize->add_control("home-cta-button-url-control", array(
+        "label" => "Default people category (current cohort)",
+        "section" => "people",
+        "settings" => "people-default-cat",
+        "type" => "select",
+        "choices" => theme_get_categories(),
+    ));
 }
 
 add_action("customize_register", "add_customizer_options");
@@ -84,3 +93,19 @@ function wpd_fix_category_requests( $request ){
 }
 
 add_filter( 'request', 'wpd_fix_category_requests' );
+
+function get_current_page_url() {
+    global $wp;
+    return add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+}
+
+function theme_get_categories() {
+    $categories = get_categories();
+    $choices = array();
+
+    foreach ($categories as $category) {
+        $choices[$category->slug] = $category->name;
+    }
+
+    return $choices;
+}

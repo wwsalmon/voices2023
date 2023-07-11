@@ -1,4 +1,18 @@
 <?php get_header();
+$url = get_current_page_url();
+$url_parts = parse_url($url);
+parse_str($url_parts["query"], $query);
+$category_slug = $query["program"];
+$default_slug = get_theme_mod("category_setting", "los-angeles-2022");
+if (!$category_slug) {
+    $category_slug = $default_slug;
+}
+$category = get_category_by_slug( $category_slug );
+if (!$category) {
+    $category = get_category_by_slug($default_slug);
+}
+$category_name = $category->name;
+$this_year = substr($this_cat, -4);
 ?>
     <div class="lg:flex max-w-6xl mx-auto py-24 px-4">
         <div class="lg:w-44 flex-shrink-0 lg:mr-16 mb-16">
@@ -15,20 +29,20 @@
         </div>
         <div class="w-full">
             <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue">Fellows</h2>
+            <div class="grid sm:grid-cols-2 gap-16 mb-16">
+                <?php
+                $fellows = get_users(array("role" => "Author", "meta_key" => "program", "meta_value" => $category->cat_ID, "meta_compare" => "LIKE"));
+                foreach($fellows as $author) {
+                    get_template_part("template_parts/person", "person", array("author"=>$author));
+                } ?>
+            </div>
+            <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue">Editors</h2>
             <div class="grid sm:grid-cols-2 gap-16">
                 <?php
-                $fellows = get_users(array("role" => "Author", "meta_key" => "program", "meta_value" => get_category_by_slug( "los-angeles-2022" )->$ID));
-                foreach($fellows as $author):
-                ?>
-                    <div class="flex">
-                        <img class="w-32 h-32 md:w-44 md:h-44 flex-shrink-0" src="<?php echo wp_get_attachment_image_url($author->get("photo")); ?>" alt="Headshot of <?php echo $author->get("display_name") ?>">
-                        <div class="ml-6">
-                            <h3 class="text-xl font-black uppercase text-tblue mb-1"><?php echo $author->get("display_name") ?></h3>
-                            <p class="mb-5 font-ss italic text-xl text-tblue"><?php echo $author->get("org")?></p>
-                            <p class="text-xs font-ss leading-normal"><?php echo $author->get("bio")?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+                $fellows = get_users(array("role" => "Editor", "meta_key" => "program", "meta_value" => $category->cat_ID, "meta_compare" => "LIKE"));
+                foreach($fellows as $author) {
+                    get_template_part("template_parts/person", "person", array("author"=>$author));
+                } ?>
             </div>
         </div>
     </div>
