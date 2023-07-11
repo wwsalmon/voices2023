@@ -1245,6 +1245,10 @@ video {
     display: flex;
   }
 
+  .lg\:hidden {
+    display: none;
+  }
+
   .lg\:w-1\/3 {
     width: 33.333333%;
   }

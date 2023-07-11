@@ -14,8 +14,8 @@ wp_head();
     <div class="sticky top-0 left-0 right-0 z-10">
         <div class="h-2 md:h-[10px] bg-tpurple w-full"></div>
         <div class="h-16 md:h-20 w-full flex items-center bg-white relative">
-            <button class="md:hidden block ml-4 text-lg opacity-50 hover:opacity-100" id="bars"><i class="fa-solid fa-bars"></i></button>
-            <div class="md:flex items-center h-full hidden">
+            <button class="lg:hidden block ml-4 text-lg opacity-50 hover:opacity-100" id="bars"><i class="fa-solid fa-bars"></i></button>
+            <div class="lg:flex items-center h-full hidden">
                 <a href="https://aaja.org/" class="block h-full px-4 mr-4 flex items-center justify-center opacity-80 hover:opacity-100 bg-gray-100">
                     <img src="<?php echo get_template_directory_uri() . '/img/aaja.jpg'; ?>" alt="AAJA logo" class="grayscale h-9 mix-blend-multiply">
                 </a>
@@ -30,7 +30,7 @@ wp_head();
 
             </div>
             <div class="hidden sm:flex items-center ml-auto mr-4">
-                <div class="dropdown">
+                <div class="dropdown hidden lg:block">
                     <a href="" class="font-black mx-4">Student work <i class="fa-solid fa-caret-down"></i></a>
                 </div>
                 <a href="<?php echo home_url("/apply")?>" class="block px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
@@ -39,7 +39,7 @@ wp_head();
             </div>
         </div>
     </div>
-    <div class="fixed top-0 left-0 bottom-0 w-64 bg-white z-20 shadow-lg p-4 md:hidden" id="mobile-menu">
+    <div class="fixed top-0 left-0 bottom-0 w-64 bg-white z-20 shadow-lg p-4 lg:hidden" id="mobile-menu">
         <button class="mb-8 mt-3" id="exit"><i class="fa-solid fa-xmark"></i></button>
         <a href="https://aaja.org/" class="h-16 mb-8 relative block">
             <img src="<?php echo get_template_directory_uri() . '/img/aaja.jpg'; ?>" alt="AAJA logo" class="grayscale h-full mix-blend-multiply">
