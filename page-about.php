@@ -10,12 +10,12 @@
                     }   
                 }
             </style>
-            <p class="font-ss text-tlightgray text-xl leading-normal mt-6">Voices’ mission, history and impact</p>
+            <p class="font-ss text-tlightgray text-xl leading-normal mt-6"><?php echo get_post_meta(get_the_ID(), "tagline", true)?></p>
         </div>
         <div class="w-full">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php echo get_the_post_thumbnail( null, "full" )?>
-                <p class="my-12 text-xl sm:text-2xl md:text-3xl text-tpurple font-semibold" style="line-height: 1.5"><?php echo get_post_meta(get_the_ID(), "tagline", true)?></p>
+                <p class="my-12 text-xl sm:text-2xl md:text-3xl text-tpurple font-semibold" style="line-height: 1.5"><?php echo get_post_meta(get_the_ID(), "main", true)?></p>
                 <div class="max-w-xl sm:max-w-2xl content">
                     <?php the_content(); ?>
                 </div>
