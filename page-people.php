@@ -12,7 +12,8 @@ if (!$category) {
     $category = get_category_by_slug($default_slug);
 }
 $category_name = $category->name;
-$this_year = substr($this_cat, -4);
+$category_id = $category->cat_ID;
+$this_year = substr($category_name, -4);
 ?>
     <div class="lg:flex max-w-6xl mx-auto py-24 px-4">
         <div class="lg:w-44 flex-shrink-0 lg:mr-16 mb-16">
@@ -26,20 +27,34 @@ $this_year = substr($this_cat, -4);
             </style>
             <p class="font-ss text-tlightgray text-xl leading-normal mt-6">Meet Voices’ editors, fellows and alumni.</p>
             <p class="font-black uppercase tracking-widest mt-12 mb-6 text-xs">By cohort</p>
+            <?php
+            $categories = get_categories();
+            foreach($categories as $category): ?>
+                <a href="<?php echo home_url("/people")."?program=".($category->slug) ?>" class="opacity-50 hover:opacity-100 font-semibold my-6 block"><?php echo $category->name ?></a>
+            <?php endforeach; ?>
         </div>
         <div class="w-full">
-            <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue">Fellows</h2>
-            <div class="grid sm:grid-cols-2 gap-16 mb-16">
+            <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue"><?php echo $this_year ?> Leadership</h2>
+            <div class="grid sm:grid-cols-2 gap-1 mb-16">
                 <?php
-                $fellows = get_users(array("role" => "Author", "meta_key" => "program", "meta_value" => $category->cat_ID, "meta_compare" => "LIKE"));
+                $fellows = get_users(array("role" => "Administrator", "meta_key" => "program", "meta_value" => serialize(strval($category_id)), "meta_compare" => "LIKE"));
                 foreach($fellows as $author) {
                     get_template_part("template_parts/person", "person", array("author"=>$author));
                 } ?>
             </div>
-            <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue">Editors</h2>
+            <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue"><?php echo $this_year ?> Fellows</h2>
+            <div class="grid sm:grid-cols-2 gap-16 mb-16">
+                <?php
+                // , "meta_key" => "program", "meta_value" => $category->cat_ID, "meta_compare" => "LIKE"
+                $fellows = get_users(array("role" => "Author", "meta_key" => "program", "meta_value" => serialize(strval($category_id)), "meta_compare" => "LIKE"));
+                foreach($fellows as $author) {
+                    get_template_part("template_parts/person", "person", array("author"=>$author));
+                } ?>
+            </div>
+            <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue"><?php echo $this_year ?> Editors</h2>
             <div class="grid sm:grid-cols-2 gap-16">
                 <?php
-                $fellows = get_users(array("role" => "Editor", "meta_key" => "program", "meta_value" => $category->cat_ID, "meta_compare" => "LIKE"));
+                $fellows = get_users(array("role" => "Editor", "meta_key" => "program", "meta_value" => serialize(strval($category_id)), "meta_compare" => "LIKE"));
                 foreach($fellows as $author) {
                     get_template_part("template_parts/person", "person", array("author"=>$author));
                 } ?>
