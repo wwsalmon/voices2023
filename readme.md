@@ -5,7 +5,6 @@ development
 - clone this repo into wp-content > themes folder
 - activate the theme in wp-admin
 - run `npm run tw` to watch for tailwind
-- if you make new .php files, add to `tailwind.config.js`
 
 required setup (in WordPress)
 - Create page called "Home" and set as homepage in WordPress settings (Settings > Readings > Your homepage displays > A static page > Homepage dropdown)

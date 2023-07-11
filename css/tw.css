@@ -562,6 +562,9 @@ video {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -579,6 +582,9 @@ video {
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 .mb-6 {
   margin-bottom: 1.5rem;
@@ -801,9 +807,6 @@ video {
 }
 .p-3 {
   padding: 0.75rem;
-}
-.p-8 {
-  padding: 2rem;
 }
 .p-4 {
   padding: 1rem;
@@ -1128,6 +1131,10 @@ video {
     height: 5rem;
   }
 
+  .md\:h-32 {
+    height: 8rem;
+  }
+
   .md\:h-9 {
     height: 2.25rem;
   }
@@ -1142,6 +1149,10 @@ video {
 
   .md\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
   }
 
   .md\:max-w-2xl {
