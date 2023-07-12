@@ -30,6 +30,8 @@ if (get_theme_mod("topbar-apply")) {
                 <a href="https://aaja.org/" class="block h-full px-4 mr-4 flex items-center justify-center opacity-80 hover:opacity-100 bg-gray-100">
                     <img src="<?php echo get_template_directory_uri() . '/img/aaja.jpg'; ?>" alt="AAJA logo" class="grayscale h-9 mix-blend-multiply">
                 </a>
+                <a href="https://twitter.com/aajavoices" class="font-semibold mx-2 opacity-75 hover:opacity-100"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/aajavoices/" class="font-semibold ml-2 mr-4 opacity-75 hover:opacity-100"><i class="fa-brands fa-instagram"></i></a>
                 <a href="<?php echo home_url("/about")?>" class="font-semibold mx-4">About</a>
                 <a href="<?php echo home_url("/people")?>" class="font-semibold mx-4">People</a>
                 <a href="<?php echo $leftLink; ?>" class="font-semibold mx-4"><?php echo $leftItem; ?></a>
@@ -56,7 +58,7 @@ if (get_theme_mod("topbar-apply")) {
                         display: block;
                     }
                 </style>
-                <a href="<?php echo $ctaLink; ?>" class="block px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
+                <a href="<?php echo $ctaLink; ?>" class="block px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white ml-4">
                     <?php echo $cta; ?>
                 </a>
             </div>
@@ -68,6 +70,10 @@ if (get_theme_mod("topbar-apply")) {
             <a href="https://aaja.org/" class="h-16 mb-8 relative block">
                 <img src="<?php echo get_template_directory_uri() . '/img/aaja.jpg'; ?>" alt="AAJA logo" class="grayscale h-full mix-blend-multiply">
             </a>
+            <div class="flex items-center mb-8">
+                <a href="https://twitter.com/aajavoices" class="font-semibold mr-4 opacity-75 hover:opacity-100"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/aajavoices/" class="font-semibold mr-4 opacity-75 hover:opacity-100"><i class="fa-brands fa-instagram"></i></a>
+            </div>
             <a href="<?php echo home_url("/about")?>" class="font-semibold mb-8 block">About</a>
             <a href="<?php echo home_url("/people")?>" class="font-semibold mb-8 block">People</a>
             <a href="<?php echo $leftLink; ?>" class="font-semibold mb-8 block"><?php echo $leftItem; ?></a>
