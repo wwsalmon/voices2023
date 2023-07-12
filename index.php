@@ -9,7 +9,7 @@ $categories = get_sorted_categories();
         $this_year = substr($this_cat, -4);
         $this_location = substr($this_cat, 0, -4);
         ?>
-            <div class="relative lg:-left-48 mb-16 lg:whitespace-nowrap">
+            <div class="relative lg:-left-52 mb-16 lg:whitespace-nowrap">
                 <p class="text-2xl md:text-3xl lg:text-4xl tracking-widest font-black text-tlightpurple uppercase mb-4">Student work</p>
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl text-tpurple">
                     <span class="italic font-ss font-light"><?php echo $this_location?></span>
