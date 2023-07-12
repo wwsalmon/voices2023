@@ -18,12 +18,18 @@
                 <?php
                 $authors = get_coauthors();
                 foreach($authors as $author):
+                if ($author->get("showemail")):?>
+                    <a href="mailto:<?php echo $author->get("user_email")?>" class="underline">
+                <?php endif;
                 ?>
                     <div class="flex items-center my-3">
                         <img class="block h-6 w-6 rounded-full mr-3 object-cover" src="<?php echo wp_get_attachment_image_url($author->get("photo")); ?>" alt="Headshot of <?php echo $author->get("display_name") ?>">
                         <span class="font-ss text-sm"><?php echo $author->get("display_name"); ?></span>
                     </div>
-                <?php endforeach; ?>
+                <?php
+                if ($author->get("showemail")):?>
+                    </a>
+                <?php endif; endforeach; ?>
             </div>
             <div class="flex-shrink-0 order-1 mt-8 md:mt-0 md:w-2/3 lg:w-[600px]">
                 <?php echo get_the_post_thumbnail( null, "full" )?>
