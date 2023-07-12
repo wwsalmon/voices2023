@@ -100,7 +100,7 @@ function get_current_page_url() {
 }
 
 function theme_get_categories() {
-    $categories = get_categories();
+    $categories = get_sorted_categories();
     $choices = array();
 
     foreach ($categories as $category) {
@@ -111,3 +111,17 @@ function theme_get_categories() {
 }
 
 add_filter('acf/settings/remove_wp_meta_box', '__return_false', 20); // override ACF removing custom fields. https://wordpress.org/support/topic/does-cpt-ui-disable-custom-fields/
+
+function compare_cats($a, $b) {
+    $a_year = intval(substr($a->name, -4));
+    $b_year = intval(substr($b->name, -4));
+    return $b_year - $a_year;
+}
+
+function get_sorted_categories() {
+    $categories = get_categories();
+
+    usort($categories, compare_cats);
+
+    return $categories;
+}

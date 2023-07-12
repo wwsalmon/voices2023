@@ -30,9 +30,21 @@ wp_head();
 
             </div>
             <div class="hidden sm:flex items-center ml-auto mr-4">
-                <div class="dropdown hidden lg:block">
-                    <a href="" class="font-black mx-4">Student work <i class="fa-solid fa-caret-down"></i></a>
+                <div class="hidden lg:block relative" id="dropdown">
+                    <a href="<?php echo home_url("/stories") ?>" class="font-black mx-4">Student work <i class="fa-solid fa-caret-down"></i></a>
+                    <div id="dropdown-child" class="hidden absolute bg-white top-6 right-4 rounded shadow-lg whitespace-nowrap">
+                        <?php
+                        $categories = get_sorted_categories();
+                        foreach($categories as $category): ?>
+                            <a href="<?php echo get_category_link($category->term_id) ?>" class="font-semibold px-4 py-2 block hover:bg-gray-100"><?php echo $category->name ?></a>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
+                <style>
+                    #dropdown:hover #dropdown-child {
+                        display: block;
+                    }
+                </style>
                 <a href="<?php echo home_url("/apply")?>" class="block px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
                     Apply now
                 </a>
@@ -47,7 +59,7 @@ wp_head();
         <a href="<?php echo home_url("/about")?>" class="font-semibold mb-8 block">About</a>
         <a href="<?php echo home_url("/people")?>" class="font-semibold mb-8 block">People</a>
         <a href="https://aaja-official.salsalabs.org/donate-programs/index.html" class="font-semibold mb-8 block">Donate</a>
-        <a href="" class="font-black mb-8 block">Student work <i class="fa-solid fa-caret-down"></i></a>
+        <a href="" class="font-black mb-8 block">Student work <i class="fa-solid fa-caret-down ml-2"></i></a>
         <a href="<?php echo home_url("/apply")?>" class="block px-3 h-10 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white">
             Apply now
         </a>

@@ -1,6 +1,6 @@
 <?php get_header();
 $prev_cat = "";
-$categories = get_categories();
+$categories = get_sorted_categories();
 ?>
     <div class="max-w-xl mx-auto my-24 relative px-4">
         <?php if (is_category()):
