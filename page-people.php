@@ -3,7 +3,7 @@ $url = get_current_page_url();
 $url_parts = parse_url($url);
 parse_str($url_parts["query"], $query);
 $category_slug = $query["program"];
-$default_slug = get_theme_mod("category_setting", "los-angeles-2022");
+$default_slug = get_theme_mod("category_setting", "washington-d-c-2023");
 if (!$category_slug) {
     $category_slug = $default_slug;
 }
