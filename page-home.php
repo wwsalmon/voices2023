@@ -46,7 +46,6 @@
                 <div class="hidden lg:block">
                     <p class="font-black uppercase tracking-wider mb-6">By cohort</p>
                     <?php
-                    echo "ba";
                     $categories = get_sorted_categories();
                     foreach($categories as $category): ?>
                         <a href="<?php echo get_category_link($category->term_id) ?>" class="opacity-50 hover:opacity-100 font-semibold my-6 block"><?php echo $category->name ?></a>
