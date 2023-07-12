@@ -64,7 +64,7 @@ function add_customizer_options($wp_customize) {
         "type"=>"string",
     ));
     $wp_customize->add_setting("home-cta-button-url");
-    $wp_customize->add_control("home-cta-button-url-control", array(
+    $wp_customize->add_control("home-cta-button-url-ctrl", array(
         "label"=>"Home CTA button url",
         "section"=>"home-cta",
         "settings"=>"home-cta-button-url",
