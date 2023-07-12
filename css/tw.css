@@ -727,6 +727,9 @@ video {
 .w-full {
   width: 100%;
 }
+.w-8 {
+  width: 2rem;
+}
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -805,6 +808,9 @@ video {
 .rounded-br {
   border-bottom-right-radius: 0.25rem;
 }
+.border {
+  border-width: 1px;
+}
 .bg-\[\#eeeeee\] {
   --tw-bg-opacity: 1;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity));
@@ -846,6 +852,9 @@ video {
 }
 .p-4 {
   padding: 1rem;
+}
+.p-1 {
+  padding: 0.25rem;
 }
 .px-3 {
   padding-left: 0.75rem;
