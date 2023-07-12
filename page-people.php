@@ -25,7 +25,7 @@ $this_year = substr($category_name, -4);
                     }   
                 }
             </style>
-            <p class="font-ss text-tlightgray text-xl leading-normal mt-6">Meet Voices’ editors, fellows and alumni.</p>
+            <p class="font-ss text-tlightgray text-xl leading-normal mt-6"><?php echo get_post_meta(get_the_ID(), "tagline", true)?></p>
             <p class="font-black uppercase tracking-widest mt-12 mb-6 text-xs">By cohort</p>
             <?php
             $categories = get_sorted_categories();
