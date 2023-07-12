@@ -38,7 +38,7 @@ function catch_that_image($post_id)
 add_theme_support( 'post-thumbnails' );
 
 function add_customizer_options($wp_customize) {
-    $wp_customize->add_section("home-cta", array("title" => "Homepage call to action"));
+    $wp_customize->add_section("home-cta", array("title" => "Homepage box"));
     $wp_customize->add_setting("home-cta-image");
     $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, "home-cta-image-control",array(
         "label"=>"Home CTA thumbnail",
@@ -78,6 +78,14 @@ function add_customizer_options($wp_customize) {
         "settings" => "people-default-cat",
         "type" => "select",
         "choices" => theme_get_categories(),
+    ));
+    $wp_customize->add_section("topbar-section", array("title"=>"Topbar settings"));
+    $wp_customize->add_setting("topbar-apply", array("default"=>false));
+    $wp_customize->add_control("topbar-apply-control", array(
+        "label" => "Show Apply as main navbar CTA? If unchecked, Donate will be navbar CTA",
+        "section" => "topbar-section",
+        "settings" => "topbar-apply",
+        "type" => "checkbox",
     ));
 }
 

@@ -8,6 +8,17 @@
 <?php
 date_default_timezone_set("America/New_York");
 wp_head();
+if (get_theme_mod("topbar-apply")) {
+    $leftItem = "Donate";
+    $leftLink = "https://aaja-official.salsalabs.org/donate-programs/index.html";
+    $cta = "Apply now";
+    $ctaLink = home_url("/apply");
+} else {
+    $leftItem = "Apply";
+    $leftLink = home_url("/apply");
+    $cta = "Support Voices";
+    $ctaLink = "https://aaja-official.salsalabs.org/donate-programs/index.html";
+}
 ?>
 </head>
 <body>
@@ -21,7 +32,7 @@ wp_head();
                 </a>
                 <a href="<?php echo home_url("/about")?>" class="font-semibold mx-4">About</a>
                 <a href="<?php echo home_url("/people")?>" class="font-semibold mx-4">People</a>
-                <a href="https://aaja-official.salsalabs.org/donate-programs/index.html" class="font-semibold mx-4">Donate</a>
+                <a href="<?php echo $leftLink; ?>" class="font-semibold mx-4"><?php echo $leftItem; ?></a>
             </div>
             <a href="<?php echo home_url() ?>" class="absolute left-1/2 top-4 md:top-5 transform -translate-x-1/2">
                 <img src="<?php echo get_template_directory_uri() . '/img/voices.png'; ?>" class="h-8 md:h-9" alt="">
@@ -45,8 +56,8 @@ wp_head();
                         display: block;
                     }
                 </style>
-                <a href="<?php echo home_url("/apply")?>" class="block px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
-                    Apply now
+                <a href="<?php echo $ctaLink; ?>" class="block px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
+                    <?php echo $cta; ?>
                 </a>
             </div>
         </div>
@@ -59,7 +70,7 @@ wp_head();
             </a>
             <a href="<?php echo home_url("/about")?>" class="font-semibold mb-8 block">About</a>
             <a href="<?php echo home_url("/people")?>" class="font-semibold mb-8 block">People</a>
-            <a href="https://aaja-official.salsalabs.org/donate-programs/index.html" class="font-semibold mb-8 block">Donate</a>
+            <a href="<?php echo $leftLink; ?>" class="font-semibold mb-8 block"><?php echo $leftItem; ?></a>
             <a href="" class="font-black mb-8 block">Student work</a>
             <button id="cohort-button" class="block mb-8 font-semibold">By cohort  <i class="fa-solid fa-caret-down ml-2 text-tlightgray"></i></button>
             <div id="cohort-menu" class="hidden">
@@ -67,8 +78,8 @@ wp_head();
                     <a href="<?php echo get_category_link($category->term_id) ?>" class="font-semibold pl-4 mb-8 block hover:bg-gray-100"><?php echo $category->name ?></a>
                 <?php endforeach; ?>
             </div>
-            <a href="<?php echo home_url("/apply")?>" class="block px-3 h-10 inline-flex items-center justify-center uppercase bg-tred text-white">
-                Apply now
+            <a href="<?php echo $ctaLink?>" class="block px-3 h-10 inline-flex items-center justify-center uppercase bg-tred text-white">
+                <?php echo $cta;?>
             </a>
         </div>
     </div>
