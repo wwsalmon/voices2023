@@ -5,9 +5,11 @@
     <div class="max-w-5xl mx-auto px-4 py-12">
         <?php
         $tags = array_values(array_filter(get_the_tags(), function($t) {return $t->name != "Featured";}));
+        $tag = $tags[0];
+        $category = get_the_category()[0];
         ?>
-        <p class="text-tred uppercase font-black tracking-[1.6px]"><?php echo $tags[0]->name ?></p>
-        <p class="font-ss"><a href="<?php echo home_url("/stories")?>" class="underline">Student work</a> • <a href="<?php echo get_category_link(get_the_category()[0]) ?>" class="italic underline"><?php echo get_the_category()[0]->name ?></a></p>
+        <p class="text-tred uppercase font-black tracking-[1.6px]"><?php echo $tag->name ?></p>
+        <p class="font-ss"><a href="<?php echo home_url("/stories")?>" class="underline">Student work</a> • <a href="<?php echo get_category_link($category) ?>" class="italic underline"><?php echo get_the_category()[0]->name ?></a></p>
         <h1 class="font-ss font-black text-5xl sm:text-6xl md:text-7xl max-w-4xl mt-4 mb-8 sm:mb-16" style="line-height: 1.1;"><?php the_title() ?></h1>
         <div class="md:flex">
             <div class="md:ml-12 md:mt-0 order-2">
@@ -29,11 +31,43 @@
             </div>
         </div>
     </div>
-    <div class="max-w-xl md:max-w-2xl mx-auto px-4 content content-drop">
-        <?php the_content(); ?>
+    <div class="relative w-full">
+        <div class="absolute hidden lg:block left-8 top-64 w-40">
+            <?php
+            $tagposts = get_posts(array("tag" => $tag->slug, "exclude" => array(get_the_ID())));
+            if (!empty($tagposts)):
+            ?>
+                <p class="text-tred uppercase text-xs mb-9 font-black tracking-[1.6px]"><?php echo $tag->name ?></p>
+                <div class="mb-64">
+                    <?php
+                    foreach ($tagposts as $post):
+                        get_template_part("template_parts/post-small");
+                    endforeach;
+                    ?>
+                </div>
+            <?php endif; ?>
+            <?php
+            $catposts = get_posts(array("category__in" => array($category->cat_ID), "exclude" => array(get_the_ID())));
+            if (!empty($catposts)):
+            ?>
+                <p class="text-tpurple uppercase text-xs mb-9 font-black tracking-[1.6px]">
+                    <?php echo $category->name ?>
+                </p>
+                <div class="mb-64">
+                    <?php
+                    foreach ($catposts as $post):
+                        get_template_part("template_parts/post-small");
+                    endforeach;
+                    ?>
+                </div>
+            <?php endif; ?>  
+        </div>
+        <div class="max-w-xl md:max-w-2xl mx-auto px-4 content content-drop">
+            <?php the_content(); ?>
+        </div>
     </div>
     <div class="max-w-4xl mx-auto px-4 my-28">
-        <h2 class="text-tyellow text-7xl font-ss font-light">Authors</h2>
+        <h2 class="text-tyellow text-5xl sm:text-6xl md:text-7xl font-ss font-light">Authors</h2>
         <?php foreach($authors as $author):
             $bio = $author->get("bio");
             $twitter = $author->get("twitter");
@@ -47,6 +81,35 @@
                 </div>
             </div>
         <?php endforeach; ?>
+        <?php
+            if (!empty($tagposts) || !empty($catposts)):
+        ?>
+            <h2 class="text-tpurple text-5xl sm:text-6xl md:text-7xl font-ss font-light mb-9 mt-28">Read more</h2>
+            <?php if (!empty($tagposts)): ?>
+                <p class="text-tred uppercase text-xs mb-9 font-black tracking-[1.6px]"><?php echo $tag->name ?></p>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-9 mb-20">
+                    <?php
+                    foreach ($tagposts as $post):
+                        get_template_part("template_parts/post-small");
+                    endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($catposts)): ?>
+                <p class="text-tpurple uppercase text-xs mb-9 font-black tracking-[1.6px]">
+                    <?php echo $category->name ?>
+                </p>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-9 mb-20">
+                    <?php
+                    $catposts = get_posts(array("cat" => $category->cat_ID, "exclude" => array(get_the_ID())));
+                    foreach ($catposts as $post):
+                        get_template_part("template_parts/post-small");
+                    endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <a href="<?php echo home_url("/stories")?>" class="px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white">
+                <i class="fa-solid fa-arrow-left mr-4"></i> All student work
+            </a>
+        <?php endif; ?>
     </div>
 <?php endwhile; ?>
 <?php
