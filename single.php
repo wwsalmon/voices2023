@@ -73,24 +73,27 @@
         </div>
     </div>
     <div class="max-w-4xl mx-auto px-4 my-28">
-        <h2 class="text-tyellow text-5xl sm:text-6xl md:text-7xl font-ss font-light">Authors</h2>
+        <h2 class="text-tblue text-5xl sm:text-6xl md:text-7xl font-ss font-light">Authors</h2>
         <?php foreach($authors as $author):
             $bio = $author->get("bio");
             $twitter = $author->get("twitter");
             $linkedin = $author->get("linkedin");
         ?>
-            <div class="my-16 flex">
+            <!-- <div class="my-16 flex">
                 <img class="w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0" src="<?php echo wp_get_attachment_image_url($author->get("photo")); ?>" alt="Headshot of <?php echo $author->get("display_name") ?>">
                 <div class="ml-6 sm:ml-8">
                     <h3 class="text-xl font-bold mb-3"><?php echo $author->get("display_name") ?></h3>
                     <p class="mb-3 font-ss"><span class="italic"><?php echo $author->get("org")?></span> <?php if($bio) {echo " — ".$bio;}?></p>
                 </div>
+            </div> -->
+            <div class="my-16">
+                <?php get_template_part("template_parts/person", "person", array("author"=>$author)); ?>
             </div>
         <?php endforeach; ?>
         <?php
             if (!empty($tagposts) || !empty($catposts)):
         ?>
-            <h2 class="text-tpurple text-5xl sm:text-6xl md:text-7xl font-ss font-light mb-9 mt-28">Read more</h2>
+            <h2 class="text-tyellow text-5xl sm:text-6xl md:text-7xl font-ss font-light mb-9 mt-28">Read more</h2>
             <?php if (!empty($tagposts)): ?>
                 <p class="text-tred uppercase text-xs mb-9 font-black tracking-[1.6px]"><?php echo $tag->name ?></p>
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-9 mb-20">
