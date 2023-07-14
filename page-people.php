@@ -35,7 +35,7 @@ $this_year = substr($category_name, -4);
         </div>
         <div class="w-full">
             <h2 class="font-ss font-light text-4xl sm:text-5xl mb-8 text-tblue"><?php echo $this_year ?> Leadership</h2>
-            <div class="grid sm:grid-cols-2 gap-1 mb-16">
+            <div class="grid sm:grid-cols-2 gap-16 mb-16">
                 <?php
                 $fellows = get_users(array("role" => "Administrator", "meta_key" => "program", "meta_value" => serialize(strval($category_id)), "meta_compare" => "LIKE"));
                 foreach($fellows as $author) {
