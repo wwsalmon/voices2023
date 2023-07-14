@@ -6,7 +6,7 @@ $showemail = $author->get("showemail");
 $email = $author->get("user_email");
 ?>
 <div class="flex">
-    <img class="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 object-cover" src="<?php echo wp_get_attachment_image_url($author->get("photo"), array(1024,1024)); ?>" alt="Headshot of <?php echo $author->get("display_name") ?>">
+    <img class="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 object-cover" src="<?php echo wp_get_attachment_image_url($author->get("photo"), array(256,256)); ?>" alt="Headshot of <?php echo $author->get("display_name") ?>">
     <div class="ml-6">
         <h3 class="text-xl font-black uppercase text-tblue mb-1"><?php echo $author->get("display_name") ?></h3>
         <p class="mb-5 font-ss italic text-xl text-tblue"><?php echo $author->get("org")?></p>
