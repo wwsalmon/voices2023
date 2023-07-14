@@ -73,3 +73,15 @@ body {
 .content iframe {
   margin: 4em 0;
 }
+
+.content blockquote {
+  border-left: 4px solid #43233D;
+  margin: 48px 0;
+  padding-left: 24px;
+}
+
+.content blockquote, .content blockquote p {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 24px;
+  color: #43233D;
+}
