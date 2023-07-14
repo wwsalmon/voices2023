@@ -27,6 +27,7 @@ $this_year = substr($category_name, -4);
             </style>
             <p class="font-ss text-tlightgray text-xl leading-normal mt-6"><?php echo get_post_meta(get_the_ID(), "tagline", true)?></p>
             <p class="font-black uppercase tracking-widest mt-12 mb-6 text-xs">By cohort</p>
+            <a href="<?php echo home_url("/people") ?>" class="opacity-50 hover:opacity-100 font-semibold my-6 block">Current program</a>
             <?php
             $categories = get_sorted_categories();
             foreach($categories as $category): ?>
