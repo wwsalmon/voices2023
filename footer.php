@@ -45,12 +45,12 @@
     <div class="w-full h-16 bg-white overflow-x-auto">
         <div class="flex h-full items-center max-w-5xl mx-auto px-4">
             <a href="https://aaja.org" class="font-bold mr-8">aaja.org</a>
-            <a href="" class="ml-auto flex-shrink-0">Voices home</a>
-            <a href="" class="ml-8 flex-shrink-0">Student work</a>
-            <a href="" class="ml-8 flex-shrink-0">People</a>
-            <a href="" class="ml-8 flex-shrink-0">About</a>
-            <a href="" class="ml-8 flex-shrink-0">Apply</a>
-            <a href="" class="ml-8 pr-4 flex-shrink-0">Donate</a>
+            <a href="<?php echo home_url("");?>" class="ml-auto flex-shrink-0">Voices home</a>
+            <a href="<?php echo home_url("/stories");?>" class="ml-8 flex-shrink-0">Student work</a>
+            <a href="<?php echo home_url("/people");?>" class="ml-8 flex-shrink-0">People</a>
+            <a href="<?php echo home_url("/about");?>" class="ml-8 flex-shrink-0">About</a>
+            <a href="<?php echo home_url("/apply");?>" class="ml-8 flex-shrink-0">Apply</a>
+            <a href="https://aaja-official.salsalabs.org/donate-programs/index.html" class="ml-8 pr-4 flex-shrink-0">Donate</a>
         </div>
     </div>
 </body>
