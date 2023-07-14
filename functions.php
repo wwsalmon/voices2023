@@ -133,3 +133,13 @@ function get_sorted_categories() {
 
     return $categories;
 }
+
+function unformatted_shortcode($atts, $content = null) {
+    return '<div>' . do_shortcode($content) . '</div>';
+}
+add_shortcode('html', 'unformatted_shortcode');
+
+function linkbutton_shortcode($atts, $content = null) {
+    return '<a class="block my-8 px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white" href="' . $atts["href"] . '">' . do_shortcode($content) . '</a>';
+}
+add_shortcode('linkbutton', 'linkbutton_shortcode');
