@@ -40,7 +40,8 @@
     <div class="relative w-full">
         <div class="absolute hidden lg:block left-8 top-64 w-40">
             <?php
-            $tagposts = get_posts(array("tag" => $tag->slug, "exclude" => array(get_the_ID())));
+            $this_id = get_the_ID();
+            $tagposts = get_posts(array("tag" => $tag->slug, "exclude" => array($this_id)));
             if (!empty($tagposts)):
             ?>
                 <p class="text-tred uppercase text-xs mb-9 font-black tracking-[1.6px]"><?php echo $tag->name ?></p>
@@ -53,7 +54,7 @@
                 </div>
             <?php endif; ?>
             <?php
-            $catposts = get_posts(array("category__in" => array($category->cat_ID), "exclude" => array(get_the_ID())));
+            $catposts = get_posts(array("category__in" => array($category->cat_ID), "exclude" => array($this_id)));
             if (!empty($catposts)):
             ?>
                 <p class="text-tpurple uppercase text-xs mb-9 font-black tracking-[1.6px]">
@@ -109,7 +110,6 @@
                 </p>
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-9 mb-20">
                     <?php
-                    $catposts = get_posts(array("cat" => $category->cat_ID, "exclude" => array(get_the_ID())));
                     foreach ($catposts as $post):
                         get_template_part("template_parts/post-small");
                     endforeach; ?>
