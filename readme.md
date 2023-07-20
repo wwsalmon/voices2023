@@ -94,6 +94,9 @@ uploading audio post
 - Add authors
 - Add category and tags
 
+to make small images
+- Edit image after adding => Add class => "small"
+
 changelog
 - v0.1.1 updated readme instructions, added `setup` folder and files, fixed small bugs
 - v0.1.0 first release
