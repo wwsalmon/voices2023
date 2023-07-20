@@ -94,6 +94,11 @@ uploading audio post
 - Add authors
 - Add category and tags
 
+add story stream
+- Add custom field "storystream" with unique ID samee as other posts in storystream
+- Add custom field "sshed" with hed of storystream
+- Add custom field "ssdek" with blurb for storystream
+
 to make small images
 - Edit image after adding => Add class => "small"
 

@@ -78,16 +78,16 @@
                 </div>
             <?php endif; ?>  
         </div>
-        <div class="max-w-xl md:max-w-2xl mx-auto px-4 content content-drop">
+        <div class="max-w-xl md:max-w-2xl mx-auto px-4">
             <?php
             $audio = get_post_meta($this_id, "audio", true);
             if ($audio) {
                 $audio_url = wp_get_attachment_url($audio);
                 if ($audio_url) {
                     ?>
-                        <div class="p-8 bg-tpurple text-white border rounded">
-                            <h3 style="margin: 0">This is an audio story.</h3>
-                            <p style="margin: 8px 0 24px 0">Listen to it below:</p>
+                        <div class="p-8 bg-tpurple text-white border rounded mb-8">
+                            <h3 class="font-bold text-2xl mb-3 font-ss">This is an audio story.</h3>
+                            <p class="mt-2 mb-6 text-lg">Listen to it below:</p>
                             <audio controls class="w-full">
                                 <source src="<?php echo $audio_url?>" type="audio/mpeg">
                             </audio>
@@ -96,7 +96,28 @@
                 }
             }
             ?>
-            <?php the_content(); ?>
+            <?php
+            $storystream = get_post_meta($this_id, "storystream", true);
+            $sshed = get_post_meta($this_id, "sshed", true);
+            $ssdek = get_post_meta($this_id, "ssdek", true);
+            if ($storystream && $sshed && $ssdek) {
+                $ssposts = get_posts(array("meta_key"=>"storystream","meta_value"=>$storystream));
+                ?>
+                    <div class="p-8 bg-tlightpurple border rounded mb-8">
+                        <p class="font-black uppercase text-tred tracking-widest mt-0 mb-3 text-xs font-sans">Storystream</p>
+                        <h3 class="font-bold text-2xl mb-3 font-ss"><?php echo $sshed ?></h3>
+                        <p class="mt-2 mb-6 text-lg"><?php echo $ssdek ?></p>
+                        <div class="sm:grid grid-cols-2 gap-x-9 pt-6 border-t border-tgray">
+                            <?php foreach ($ssposts as $post) {
+                                get_template_part("template_parts/post-small");
+                            } ?>
+                        </div>
+                    </div>
+                <?php
+            } ?>
+            <div class="content content-drop">
+                <?php the_content(); ?>
+            </div>
         </div>
     </div>
     <div class="max-w-4xl mx-auto px-4 my-28">
