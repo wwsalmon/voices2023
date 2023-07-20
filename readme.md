@@ -32,6 +32,7 @@ required setup (in WordPress)
         - Create field "org", text
         - Create field "program", taxonomy / category / multi-select
         - Create field "show email publicly" / field name "showemail", true/false
+        - TODO: add audio field explanation here
 - Set up footer
     - Go to Appearance > Widgets
     - Add Text widget to each footer section. Use `[linkbutton href="https://link"]Button text[/linkbutton]` for buttons
@@ -49,12 +50,8 @@ required setup (in WordPress)
         - Put in content for page. Use H2 for subheds
     - Create page called "Apply"
         - Set custom field "tagline" for sidebar tagline text `Become a fellow or editor`
-        - custom fields make the box up top
-            - apply_heading: `The Voices 2023 cycle is now closed for applications.`
-            - apply_body: `For updates on the cohort and 2024 applications, follow Voices on Twitter and Instagram and subscribe to the AAJA newsletter using the link below.`
-            - apply_button: `SUBSCRIBE TO AAJA'S NEWSLETTER`
-            - apply_url: `https://www.aaja.org/news-and-resources/newsletter-archives/`
         - Put in content for page. Use H2 for subheds
+        - Use Appearance > Widgets, add Text widget to Apply Top section, use headline for top and `[linkbutton href="https://link"]Button text[/linkbutton]` for buttons
     - Create page called "People"
         - Set custom field "tagline" for sidebar tagline text `Meet Voices’ editors, fellows and alumni.`
 - Add categories in Posts > Categories

@@ -163,6 +163,12 @@ function footer_widgets_init() {
         "before_widget" => "",
         "after_widget" => "",
     ));
+    register_sidebar(array(
+        "name" => "Apply page top section",
+        "id" => "apply-top",
+        "before_widget" => "",
+        "after_widget" => "",
+    ));
 }
 
 add_action( "widgets_init", "footer_widgets_init" );

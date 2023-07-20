@@ -14,14 +14,15 @@
         </div>
         <div class="w-full">
             <?php while ( have_posts() ) : the_post(); $post = get_post(); ?>
-                <div class="max-w-2xl p-4 sm:p-8 text-white bg-tgray">
-                    <p class="font-bold text-xl sm:text-2xl"><?php if ($post->apply_heading) {echo $post->apply_heading;} else {echo "The Voices 2023 cycle is now closed for applications.";} ?></p>
+                <div class="max-w-2xl p-4 sm:p-8 text-white bg-tgray text-xl leading-normal">
+                    <?php dynamic_sidebar( "apply-top" ); ?>
+                    <!-- <p class="font-bold text-xl sm:text-2xl"><?php if ($post->apply_heading) {echo $post->apply_heading;} else {echo "The Voices 2023 cycle is now closed for applications.";} ?></p>
                     <div class="content">
                         <p><?php if ($post->apply_body) {echo $post->apply_body;} else {echo "For updates on the cohort and 2024 applications, follow Voices on Twitter and Instagram and subscribe to the AAJA newsletter using the link below.";} ?></p>
                         <a href="<?php if ($post->apply_url) {echo $post->apply_url;} else {echo "https://www.aaja.org/news-and-resources/newsletter-archives/";} ?>" class="px-[10px] py-2 inline-flex items-center justify-center text-center uppercase bg-tred font-semibold text-white">
                             <?php if ($post->apply_button) {echo $post->apply_button;} else {echo "Subscribe to AAJA's newsletter";} ?>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="max-w-xl sm:max-w-2xl content">
                     <?php the_content(); ?>

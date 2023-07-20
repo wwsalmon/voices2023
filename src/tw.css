@@ -18,3 +18,7 @@ img.small {
     width: auto;
     margin: 0 auto;
 }
+
+.widgettitle {
+    @apply text-3xl font-bold mb-6;
+}
