@@ -10,3 +10,11 @@ p.wp-caption-text {
     @apply text-xs text-tlightgray mt-3;
     font-family: "Libre Franklin", sans-serif;
 }
+
+img.small {
+    max-height: 300px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+}

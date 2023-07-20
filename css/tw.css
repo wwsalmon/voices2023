@@ -1083,6 +1083,14 @@ p.wp-caption-text {
     font-family: "Libre Franklin", sans-serif;
 }
 
+img.small {
+    max-height: 300px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
