@@ -81,8 +81,14 @@
         <a href="<?php echo home_url("/people")?>" class="px-4 py-3 inline-flex items-center text-lg justify-center uppercase bg-tblue font-semibold mb-12 text-white" style="line-height: 1.1;">
             MEET our editors, fellows and alumni
         </a>
-
         <img src="<?php echo get_template_directory_uri() . '/img/twitter.jpg'; ?>" alt="Screenshots of tweets from industry leaders praising Voices student work" class="w-full">
+        <p class="font-black uppercase tracking-wider text-center mt-36 mb-8">Voices is sponsored by</p>
+        <div class="max-w-2xl mx-auto">
+            <img src="<?php echo get_template_directory_uri() . '/img/sponsors.jpg'; ?>" alt="Logos of sponsors of AAJA Voices">
+            <p class="mt-8 text-tlightgray">
+                Special Thanks to the Voices friends at The Washington Post: Lori Aratani, Tracy Jan, Marian Liu, Kenisha Malcolm, Melissa Ngo, Alisa Tang, Emily Tsao, William Wan, Amy B Wang, Jay Wang
+            </p>
+        </div>
     </div>
 <?php
 get_footer();
