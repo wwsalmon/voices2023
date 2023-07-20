@@ -79,6 +79,23 @@
             <?php endif; ?>  
         </div>
         <div class="max-w-xl md:max-w-2xl mx-auto px-4 content content-drop">
+            <?php
+            $audio = get_post_meta($this_id, "audio", true);
+            if ($audio) {
+                $audio_url = wp_get_attachment_url($audio);
+                if ($audio_url) {
+                    ?>
+                        <div class="p-8 bg-tpurple text-white border rounded">
+                            <h3 style="margin: 0">This is an audio story.</h3>
+                            <p style="margin: 8px 0 24px 0">Listen to it below:</p>
+                            <audio controls class="w-full">
+                                <source src="<?php echo $audio_url?>" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    <?php
+                }
+            }
+            ?>
             <?php the_content(); ?>
         </div>
     </div>

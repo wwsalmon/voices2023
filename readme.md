@@ -5,6 +5,7 @@ development
 - clone this repo into wp-content > themes folder
 - activate the theme in wp-admin
 - run `npm run tw` to watch for tailwind
+- you may need to edit php.ini (find the proper directory by running `phpinfo()`) to set max_post_size to a higher amount
 
 required setup (in WordPress)
 - Upload the theme through Appearance > Themes > Add New > Upload Theme
@@ -76,6 +77,15 @@ uploading YouTube video post
 - Create new custom field "youtube" and paste YouTube embed URL (ex. https://www.youtube.com/embed/74sYPrYVQqE)
 - Add featured image. Can get YouTube thumbnail with this cool https://youtube-thumbnail-grabber.com/
 - Add content
+- Add excerpt
+- Add authors
+- Add category and tags
+
+uploading audio post
+- Create new post
+- Upload audio file in "Audio file" field. Make sure it's an MP3.
+- Add content
+- Add featured image
 - Add excerpt
 - Add authors
 - Add category and tags

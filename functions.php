@@ -143,3 +143,7 @@ function linkbutton_shortcode($atts, $content = null) {
     return '<a class="block my-8 px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white" href="' . $atts["href"] . '">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('linkbutton', 'linkbutton_shortcode');
+
+@ini_set( 'upload_max_filesize' , '32M' );
+@ini_set( 'post_max_size', '32M');
+@ini_set( 'max_execution_time', '300' );
