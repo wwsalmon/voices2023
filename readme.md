@@ -71,6 +71,15 @@ required setup (in WordPress)
     - Put in the content
     - Do Yoast SEO when done
 
+uploading YouTube video post
+- Create new post
+- Create new custom field "youtube" and paste YouTube embed URL (ex. https://www.youtube.com/embed/74sYPrYVQqE)
+- Add featured image. Can get YouTube thumbnail with this cool https://youtube-thumbnail-grabber.com/
+- Add content
+- Add excerpt
+- Add authors
+- Add category and tags
+
 changelog
 - v0.1.1 updated readme instructions, added `setup` folder and files, fixed small bugs
 - v0.1.0 first release

@@ -32,7 +32,16 @@
                 <?php endif; endforeach; ?>
             </div>
             <div class="flex-shrink-0 order-1 mt-8 md:mt-0 md:w-2/3 lg:w-[600px]">
-                <?php echo get_the_post_thumbnail( null, "full" )?>
+                <?php
+                $youtube = get_post_meta(get_the_ID(), "youtube", true);
+                if ($youtube) {
+                ?>
+                    <iframe src="<?php echo $youtube; ?>" frameborder="0" class="w-full aspect-video"></iframe>
+                <?php
+                } else {
+                    echo get_the_post_thumbnail( null, "full" );
+                }
+                ?>
                 <p class="text-xs text-tlightgray mt-3"><?php echo get_the_post_thumbnail_caption()?></p>
             </div>
         </div>
