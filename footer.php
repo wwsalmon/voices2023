@@ -5,29 +5,32 @@
                 <div class="lg:w-1/3 lg:px-8 flex-shrink-0 mb-12">
                     <p class="text-3xl font-black mb-3">Apply</p>
                     <p class="text-2xl font-ss text-tlightyellow italic mb-8">Become a fellow or editor</p>
-                    <p class="font-ss text-xl mb-8 leading-relaxed">
-                        <b>We are looking for undergraduate and graduate students</b> who are excellent storytellers and interested in new technologies and story forms. 2023 cycle applications are due on March 3, 2023 at 11:59 PM.
-                    </p>
-                    <a href="<?php echo home_url( "/apply" )?>" class="px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
+                    <div class="font-ss text-xl mb-8 leading-relaxed">
+                        <?php dynamic_sidebar( "footer-apply" ); ?>
+                        <!-- <b>We are looking for undergraduate and graduate students</b> who are excellent storytellers and interested in new technologies and story forms. 2023 cycle applications are due on March 3, 2023 at 11:59 PM. -->
+                    </div>
+                    <!-- <a href="<?php echo home_url( "/apply" )?>" class="px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
                         Apply now
-                    </a>
+                    </a> -->
                 </div>
                 <div class="lg:w-1/3 lg:px-8 flex-shrink-0 mb-12">
                     <p class="text-3xl font-black mb-3">Donate</p>
                     <p class="text-2xl font-ss text-tlightpurple italic mb-8">Support our impact</p>
-                    <p class="font-ss text-xl mb-8 leading-relaxed">
-                        <b>We need your help</b> to keep providing valuable opportunities to young journalists and making an impact through our stories.
-                    </p>
-                    <a href="https://aaja-official.salsalabs.org/donate-programs/index.html" class="px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
+                    <div class="font-ss text-xl mb-8 leading-relaxed">
+                        <?php dynamic_sidebar( "footer-support" ); ?>
+                        <!-- <b>We need your help</b> to keep providing valuable opportunities to young journalists and making an impact through our stories. -->
+                    </div>
+                    <!-- <a href="https://aaja-official.salsalabs.org/donate-programs/index.html" class="px-3 h-10 flex items-center justify-center uppercase bg-tred font-semibold text-white">
                         Support Voices
-                    </a>
+                    </a> -->
                 </div>
                 <div class="lg:w-1/3 lg:px-8 flex-shrink-0 mb-12">
                     <p class="text-3xl font-black mb-3">Partner</p>
                     <p class="text-2xl font-ss text-tlightblue italic mb-8">Work with us as a brand</p>
-                    <p class="font-ss text-xl mb-8 leading-relaxed">
-                        <b>To sponsor this program</b> or learn more about AAJA's student programming, reach out to Director of Programs and Partnerships Wailya Lari at <a href="mailto:waliyal@aajaorg" class="underline">waliyal@aaja.org</a>.
-                    </p>
+                    <div class="font-ss text-xl mb-8 leading-relaxed">
+                        <?php dynamic_sidebar( "footer-partner" ); ?>
+                        <!-- <b>To sponsor this program</b> or learn more about AAJA's student programming, reach out to Director of Programs and Partnerships Wailya Lari at <a href="mailto:waliyal@aajaorg" class="underline">waliyal@aaja.org</a>. -->
+                    </div>
                 </div>
             </div>
         </div>

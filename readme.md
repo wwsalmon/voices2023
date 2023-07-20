@@ -13,6 +13,7 @@ required setup (in WordPress)
 - Deactivate and uninstall the default plugins if your hosting provider uses them
 - Install plugins
     - Classic editor
+    - Classic widgets
     - ACF
     - Co-authors Plus
     - Yoast SEO
@@ -31,6 +32,9 @@ required setup (in WordPress)
         - Create field "org", text
         - Create field "program", taxonomy / category / multi-select
         - Create field "show email publicly" / field name "showemail", true/false
+- Set up footer
+    - Go to Appearance > Widgets
+    - Add Text widget to each footer section. Use `[linkbutton href="https://link"]Button text[/linkbutton]` for buttons
 - Set up pages
     - For all pages
         - In editor, screen options => excerpts to show excerpts field, options => custom fields to show custom fields

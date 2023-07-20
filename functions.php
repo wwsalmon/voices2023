@@ -140,10 +140,29 @@ function unformatted_shortcode($atts, $content = null) {
 add_shortcode('html', 'unformatted_shortcode');
 
 function linkbutton_shortcode($atts, $content = null) {
-    return '<a class="block my-8 px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white" href="' . $atts["href"] . '">' . do_shortcode($content) . '</a>';
+    return '<a class="block font-sans my-8 px-[10px] py-2 inline-flex items-center justify-center uppercase bg-tred font-semibold text-white" href="' . $atts["href"] . '">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('linkbutton', 'linkbutton_shortcode');
 
-@ini_set( 'upload_max_filesize' , '32M' );
-@ini_set( 'post_max_size', '32M');
-@ini_set( 'max_execution_time', '300' );
+function footer_widgets_init() {
+    register_sidebar(array(
+        "name" => "Footer Apply section",
+        "id" => "footer-apply",
+        "before_widget" => "",
+        "after_widget" => "",
+    ));
+    register_sidebar(array(
+        "name" => "Footer Support section",
+        "id" => "footer-support",
+        "before_widget" => "",
+        "after_widget" => "",
+    ));
+    register_sidebar(array(
+        "name" => "Footer Partner section",
+        "id" => "footer-partner",
+        "before_widget" => "",
+        "after_widget" => "",
+    ));
+}
+
+add_action( "widgets_init", "footer_widgets_init" );
