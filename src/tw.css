@@ -35,3 +35,15 @@ img.small {
     @apply mt-2 mb-6 text-lg;
     font-family: "Libre Franklin", sans-serif;
 }
+
+.nav-links {
+    @apply flex items-center;
+}
+
+.page-numbers {
+    @apply mx-2;
+}
+
+.page-numbers:not(.current) {
+    @apply bg-tred text-white px-2 py-1;
+}

@@ -896,10 +896,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-tlightgray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(159 159 158 / var(--tw-bg-opacity));
-}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1155,6 +1151,27 @@ img.small {
   font-size: 1.125rem;
   line-height: 1.75rem;
     font-family: "Libre Franklin", sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.page-numbers {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.page-numbers:not(.current) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(172 52 55 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:bg-gray-100:hover {

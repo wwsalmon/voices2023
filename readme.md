@@ -20,7 +20,7 @@ required setup (in WordPress)
     - Yoast SEO
 - Set permalink structure in Settings > Permalinks
     - Permalink structure: put in custom `/stories/%category%/%postname%/`
-    - Optional > Category base: put `stories`
+    - Optional > Category base: put `year`
 - Set favicon in Appearance > Customize > Site Identity > Site Icon. Upload `setup/favicon.png` from this repo.
 - In ACF settings
     - Go to Tools > Import and import `setup/ACF_EXPORT.json` from this repo.

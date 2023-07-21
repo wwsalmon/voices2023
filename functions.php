@@ -91,17 +91,6 @@ function add_customizer_options($wp_customize) {
 
 add_action("customize_register", "add_customizer_options");
 
-function wpd_fix_category_requests( $request ){
-    if( array_key_exists( 'category_name' , $request )
-        && ! get_term_by( 'slug', basename( $request['category_name'] ), 'category' ) ){
-            $request['name'] = basename( $request['category_name'] );
-            unset( $request['category_name'] );
-    }
-    return $request;
-}
-
-add_filter( 'request', 'wpd_fix_category_requests' );
-
 function get_current_page_url() {
     global $wp;
     return add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
