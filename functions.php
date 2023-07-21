@@ -144,6 +144,33 @@ function linkbutton_shortcode($atts, $content = null) {
 }
 add_shortcode('linkbutton', 'linkbutton_shortcode');
 
+function audio_shortcode($atts, $content = null) {
+    $caption = wp_get_attachment_caption($atts["id"]);
+    $url = wp_get_attachment_url($atts["id"]);
+
+    if ($url) {
+        $retval = '<div class="p-8 bg-tpurple text-white border rounded mb-8 audio-embed">
+        <h3 class="font-bold text-2xl mb-3 font-ss">' . $atts["title"] . '</h3>
+        <p class="mt-2 mb-6 text-lg">' . $content . '</p>
+        <audio controls class="w-full mb-2">
+            <source src="' . $url . '" type="audio/mpeg">
+        </audio>';
+
+        if ($caption) {
+            $retval = $retval . '
+            <div class="my-4"><span class="uppercase font-black tracking-widest font-sans text-sm">Transcript</span></div>
+            <div class="max-h-80 overflow-auto p-4 bg-tlightpurple text-black rounded">
+                <p class="text-sm whitespace-pre-wrap">' . do_shortcode($caption) . '</p>
+            </div>';
+        }
+
+        $retval = $retval . "</div>";
+
+        return $retval;
+    }
+}
+add_shortcode('audio', 'audio_shortcode');
+
 function footer_widgets_init() {
     register_sidebar(array(
         "name" => "Footer Apply section",
